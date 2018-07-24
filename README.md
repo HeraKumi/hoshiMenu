@@ -22,7 +22,7 @@ But for this little simple(maybe) project, I wanted to make a package updater, b
 - [X] cmake
 - [X] Gui design - Start
 - [ ] Gui design - FINAL
-- [ ] Distro Chooser
+- [X] Distro Chooser
 - [ ] Bloatware cleaner - per-prebuilt distro
 - [ ] Package updater
 - [ ] Anime wallpaper downloader
