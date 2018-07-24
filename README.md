@@ -1,5 +1,5 @@
 # requirements
-- cmake <= 3.10
+- cmake >= 3.10
 - ncurses
 - ninja
 
