@@ -8,9 +8,9 @@ you can either build with
 - `./build.sh`
 
 or
-`mkdir build`
-`cmake ..`
-`make`
+`mkdir build` &&
+`cmake ..` &&
+`make` &&
 `./hoshiMenu`
 
 # Why?
