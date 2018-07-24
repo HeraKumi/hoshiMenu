@@ -22,6 +22,6 @@ But for this little simple(maybe) project, I wanted to make a package updater, b
 - [X] Gui design - Start
 - [ ] Gui design - FINAL
 - [ ] Distro Chooser
-- [ ] Bloatclearn
+- [ ] Bloatware cleaner - per-prebuilt distro
 - [ ] Package updater
 - [ ] Anime wallpaper downloader
