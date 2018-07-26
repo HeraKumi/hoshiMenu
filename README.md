@@ -21,7 +21,7 @@ But for this little simple(maybe) project, I wanted to make a package updater, b
 # TODO
 - [X] cmake
 - [X] Gui design - Start
-- [ ] Gui design - FINAL
+- [x] Gui design - FINAL
 - [X] Distro Chooser
 - [ ] Bloatware cleaner - per-prebuilt distro
 - [ ] Package updater
