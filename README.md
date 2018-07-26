@@ -27,3 +27,7 @@ But for this little simple(maybe) project, I wanted to make a package updater, b
 - [ ] Bloatware cleaner - per-prebuilt distro
 - [ ] Package updater
 - [ ] Anime wallpaper downloader
+
+# Current state
+Not funtional but here is how it does look at the moment[07-25-2018]
+![current](https://imgur.com/ojlZDeml.png)
