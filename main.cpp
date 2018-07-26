@@ -1,10 +1,12 @@
 #include <ncurses.h>
 #include <string>
+#include <cstring>
+
 using namespace std;
 
 int main(int argc, char** argv){
   initscr();
-  noecho();
+  //noecho();
   cbreak();
 
   int yMax, xMax;
@@ -73,14 +75,14 @@ int main(int argc, char** argv){
   refresh();
 
   keypad(taskWin, true);
-  string deepinOptions[4] = { "Remove bloatware", "Update system", "Setup C++ environment", "Setup C# environment" };
-  string archLinuxOptions[2] = { "Setup C++ environment", "Update system" };
+  string deepinOptions[5] = { "Remove bloatware", "Update system", "Setup C++ environment", "Setup C# environment", "Anime Wallpaper GET" };
+  string archLinuxOptions[3] = { "Setup C++ environment", "Update system", "Anime Wallpaper GET" };
   int deepinOption, archLinuxOption;
   int hHighlight = 0;
 
   if (items[highlight] == "Deepin") {
     while (1) {
-      for(int i = 0; i < 4; i++){
+      for(int i = 0; i < 5; i++){
         if (i == hHighlight){
           wattron(taskWin, A_REVERSE);
         }
@@ -104,7 +106,7 @@ int main(int argc, char** argv){
     }
   } else if (items[highlight] == "Arch Linux"){
     while (1) {
-      for(int i = 0; i < 2; i++){
+      for(int i = 0; i < 3; i++){
         if(i == hHighlight){
           wattron(taskWin, A_REVERSE);
         }
@@ -128,6 +130,25 @@ int main(int argc, char** argv){
     }
   }
 
+  if (archLinuxOptions[hHighlight] == "Anime Wallpaper GET") { // This works
+    string mesg = "Enter download dir: ";
+    char str[80];
+    int row  = 1, col = 1;
+ 
+    refresh();
+    getmaxyx(stdscr,row,col);
+    
+    wrefresh(ouputWin);
+    mvwprintw(ouputWin, row, col,"%s", mesg);
+    mvwprintw(ouputWin, 1, 1, "Folder to download to:");
+    mvwgetstr(ouputWin, 1, 24, str);
+    mvwprintw(ouputWin, 2, 1, "Downloading to: %s", str);
+    wrefresh(ouputWin);
+
+    // curl - http stuff
+    // TODO - link curlpp
+
+  }
   getch();
   endwin();
 

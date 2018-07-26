@@ -1,7 +1,8 @@
 # requirements
 - cmake >= 3.10
 - ncurses
-- ninja
+- ninja >= 1.5
+- curlpp
 
 # Build
 you can either build with
