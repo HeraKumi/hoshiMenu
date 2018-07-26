@@ -13,20 +13,30 @@ int main(int argc, char** argv){
 
   getmaxyx(stdscr, yMax, xMax);
 
-  WINDOW * menuWin = newwin(6, xMax-12, yMax-8, 5);
+// window creation
+  WINDOW * menuWin = newwin(6, xMax-9, yMax-8, 5);
   box(menuWin, 0, 0);
+
+  WINDOW * taskWin = newwin(25, 30, 1, 5);
+  box(taskWin, 0, 0);
+
+  WINDOW * ouputWin = newwin(25, 50, 1, 36);
+  box(ouputWin, 0, 0);
+
+// window end
   refresh();
   wrefresh(menuWin);
+  wrefresh(taskWin);
+  wrefresh(ouputWin);
 
 
   keypad(menuWin, true);
-
-  string items[2] = {"Arch Linux", "Deepin"};
+  string items[4] = { "Arch Linux", "Deepin", "Update", "Exit" };
   int item;
   int highlight = 0;
 
   while (1) {
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 4; i++) {
       if (i == highlight) {
         wattron(menuWin, A_REVERSE);
       }
@@ -44,7 +54,7 @@ int main(int argc, char** argv){
         break;
       case KEY_DOWN:
         highlight++;
-        if (highlight == 2) {
+        if (highlight == 4) {
           highlight = 1;
         }
         break;
@@ -53,6 +63,68 @@ int main(int argc, char** argv){
     }
     if (item == 10) {
       break;
+    }
+  }
+  refresh();
+
+  // Add other stuff
+
+
+  refresh();
+
+  keypad(taskWin, true);
+  string deepinOptions[4] = { "Remove bloatware", "Update system", "Setup C++ environment", "Setup C# environment" };
+  string archLinuxOptions[2] = { "Setup C++ environment", "Update system" };
+  int deepinOption, archLinuxOption;
+  int hHighlight = 0;
+
+  if (items[highlight] == "Deepin") {
+    while (1) {
+      for(int i = 0; i < 4; i++){
+        if (i == hHighlight){
+          wattron(taskWin, A_REVERSE);
+        }
+        mvwprintw(taskWin, i+1, 1, deepinOptions[i].c_str());
+        wattroff(taskWin, A_REVERSE);
+      }
+      deepinOption = wgetch(taskWin);
+      switch (deepinOption) {
+        case KEY_UP:
+          hHighlight--;
+          break;
+        case KEY_DOWN:
+          hHighlight++;
+          break;
+        default:
+          break;
+      }
+      if (deepinOption == 10){
+        break;
+      }
+    }
+  } else if (items[highlight] == "Arch Linux"){
+    while (1) {
+      for(int i = 0; i < 2; i++){
+        if(i == hHighlight){
+          wattron(taskWin, A_REVERSE);
+        }
+        mvwprintw(taskWin, i+1, 1, archLinuxOptions[i].c_str());
+        wattroff(taskWin, A_REVERSE);
+      }
+      archLinuxOption = wgetch(taskWin);
+      switch (archLinuxOption) {
+        case KEY_UP:
+          hHighlight--;
+          break;
+        case KEY_DOWN:
+          hHighlight++;
+          break;
+        default:
+          break;
+      }
+      if (archLinuxOption == 10) {
+        break;
+      }
     }
   }
 
