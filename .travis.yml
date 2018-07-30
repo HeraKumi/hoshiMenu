@@ -1,14 +1,18 @@
 language: cpp
 compiler: gcc
 os: linux
+before_install:
+    - sudo apt-get update -q
+    - sudo apt-get install cmake-3.10 ninja-1.5 make libncurses-dev
 addon:
-        sources:
-            - ubuntu-toolchain-r test
-        packages:
-            - cmake-3.10
-            - make
-            - ninja-1.5
-            - libncurses-dev
+        apt:
+            sources:
+                - ubuntu-toolchain-r test
+            packages:
+                - cmake-3.10
+                - make
+                - ninja-1.5
+                - libncurses-dev
 script:
         - mkdir build && cd build
         - cmake .. && make hoshiMenu
