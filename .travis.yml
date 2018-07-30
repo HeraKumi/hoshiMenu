@@ -24,4 +24,4 @@ install:
     - sudo make install
 script:
         - mkdir build && cd build
-        - cmake .. && make hoshiMenu
+        - cmake .. && make
