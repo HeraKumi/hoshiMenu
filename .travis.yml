@@ -8,10 +8,10 @@ before_install: sudo apt-get install -y make cmake ninja libncurses-dev
 addons:
   update: true
    package:
-  - cmake
-  - ninja
-  - make
-  - libncurses-dev
+    - cmake
+    - ninja
+    - make
+    - libncurses-dev
 script:
   - mkdir build && cd build
   - cmake ..
