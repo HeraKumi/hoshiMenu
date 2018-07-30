@@ -5,9 +5,9 @@ addon:
         sources:
             - ubuntu-toolchain-r test
         packages:
-            - cmake
+            - cmake-3.10
             - make
-            - ninja
+            - ninja-1.5
             - libncurses-dev
 script:
         - mkdir build && cd build
