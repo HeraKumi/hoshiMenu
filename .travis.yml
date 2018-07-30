@@ -1,0 +1,10 @@
+language: cpp
+compiler:
+  - gcc
+os:
+  - linux
+dist: trusty
+before_install:
+  sudo apt-get install -y make cmake ninja libncurses-dev build-essential
+addons:
+  update: true
