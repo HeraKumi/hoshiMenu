@@ -1,19 +1,11 @@
 language: cpp
-compiler:
-  - gcc
-os:
-  - linux
-dist: trusty
-before_install: sudo apt-get install -y make cmake ninja libncurses-dev 
-addons:
-  update: true
-   package:
-    - cmake
-    - ninja
-    - make
-    - libncurses-dev
-script:
-  - mkdir build && cd build
-  - cmake ..
-  - make
-  - ./hoshiMenu
+compiler: gcc
+os: linux
+addon:
+        sources:
+                - ubuntu-toolchain-r test
+        packages:
+                - cmake
+                - make
+                - ninja
+                - libncurses-dev
