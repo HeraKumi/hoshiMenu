@@ -3,9 +3,12 @@ compiler: gcc
 os: linux
 addon:
         sources:
-                - ubuntu-toolchain-r test
+            - ubuntu-toolchain-r test
         packages:
-                - cmake
-                - make
-                - ninja
-                - libncurses-dev
+            - cmake
+            - make
+            - ninja
+            - libncurses-dev
+script:
+        - mkdir build && cd build
+        - cmake .. && make hoshiMenu
