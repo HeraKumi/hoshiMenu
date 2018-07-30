@@ -4,8 +4,7 @@ compiler:
 os:
   - linux
 dist: trusty
-before_install:
-  sudo apt-get install -y make cmake ninja libncurses-dev 
+before_install: sudo apt-get install -y make cmake ninja libncurses-dev 
 addons:
   update: true
    package:
