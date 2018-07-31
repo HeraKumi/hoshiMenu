@@ -1,18 +1,26 @@
 language: cpp
-compiler: gcc
-os: linux
+sudo: required
+dist: trusty
+
+matrix:
+    include:
+        - os: linux
+        compiler: gcc
+        addons:
+            apt:
+                sources: ['ubuntu-toolchain-r-test']
+                packages: ['g++', 'gcc', 'cmake']
+            env:
+                - CXX_COMPILER=g++
+                - C_COMPILER=gcc
+
 before_install:
-    - sudo apt-get update -q
-    - sudo apt-get install make libncurses5-dev
-addon:
-        apt:
-            sources:
-                - ubuntu-toolchain-r test
-            packages:
-                - cmake
-                - make
-                - ninja
-                - libncurses5-dev
-script:
-        - mkdir build && cd build
-        - cmake .. && make
+    - pushd ~
+    - wget -O curlpp-0.8.1.tar.gz https://github.com/jpbarrette/curlpp/archive/v0.8.1.tar.gz
+    - tar -xf curlpp-0.8.1.tar.gz
+    - cd curlpp-0.8.1
+    - mkdir cmake_build
+    - cd cmake_build
+    - cmake -D CMAKE_CXX_COMPILER=`which ${CXX_COMPILER}` -DCMAKE_CXX_FLAGS="$CMAKE_CXX_FLAGS" -DCMAKE_EXE_LINKER_FLAGS="$CMAKE_EXE_LINKER_FLAGS" ..
+    - sudo make install
+    - popd
