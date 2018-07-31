@@ -139,9 +139,6 @@ int main(int argc, char** argv){
     getmaxyx(stdscr,row,col);
     
     wrefresh(ouputWin);
-    mvwprintw(ouputWin, row, col,"%s", mesg);
-    mvwprintw(ouputWin, 1, 1, "Folder to download to:");
-    mvwgetstr(ouputWin, 1, 24, str);
     mvwprintw(ouputWin, 2, 1, "Downloading to: %s", str);
     wrefresh(ouputWin);
 
