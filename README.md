@@ -1,6 +1,6 @@
 # requirements
-- cmake >= 3.10
-- ncurses
+- cmake >= 3.9
+- ncurses >= 6.1
 - ninja >= 1.5 or Make
 - curlpp
 
