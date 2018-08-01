@@ -20,6 +20,8 @@ before_install:
     - cd cmake_build
     - cmake -D CMAKE_CXX_COMPILER=`which ${CXX_COMPILER}` -DCMAKE_CXX_FLAGS="$CMAKE_CXX_FLAGS" -DCMAKE_EXE_LINKER_FLAGS="$CMAKE_EXE_LINKER_FLAGS" ..
     - sudo make install
+    - wget http://mirrors.kernel.org/ubuntu/pool/main/n/ncurses/libncurses6_6.1+20180210-4ubuntu1_amd64.deb
+    - sudo dpkg -i libncurses6_6.1+20180210-4ubuntu1_amd64.deb
     - popd
 script:
     - mkdir build
