@@ -20,9 +20,9 @@ before_install:
     - cd cmake_build
     - cmake -D CMAKE_CXX_COMPILER=`which ${CXX_COMPILER}` -DCMAKE_CXX_FLAGS="$CMAKE_CXX_FLAGS" -DCMAKE_EXE_LINKER_FLAGS="$CMAKE_EXE_LINKER_FLAGS" ..
     - sudo make install
-    - wget -O ncurses.tar.gz https://invisible-mirror.net/archives/ncurses/ncurses-6.1.tar.gz
-    - tar -xf ncurses.tar.gz
-    - cd ncurses
+    - wget -O ncurses-6.1.tar.gz https://invisible-mirror.net/archives/ncurses/ncurses-6.1.tar.gz
+    - tar -xf ncurses-6.1.tar.gz
+    - cd ncurses-6.1
     - ./configure
     - make
     - sudo make install
