@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/HeraKumi/hoshiMenu.svg?branch=master)](https://travis-ci.com/HeraKumi/hoshiMenu)
+
 # requirements
 - cmake >= 3.9
 - ncurses >= 6.1
