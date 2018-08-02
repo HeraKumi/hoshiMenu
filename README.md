@@ -5,10 +5,7 @@
 - curlpp
 
 # Build
-you can either build with
-- `./build.sh`
 
-or
 `mkdir build` &&
 `cmake ..` &&
 `make` &&
