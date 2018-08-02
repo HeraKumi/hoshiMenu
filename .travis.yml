@@ -31,5 +31,5 @@ before_install:
 script:
     - mkdir build
     - cd build
-    - cmake .. -DCMAKE_CXX_FLAGS="-lncurses"
+    - cmake ..
     - make VERBOSE=1
