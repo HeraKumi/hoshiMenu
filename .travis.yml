@@ -6,7 +6,7 @@ compiler: gcc
 addons:
     apt:
         sources: ['ubuntu-toolchain-r-test']
-        packages: ['g++', 'gcc-8', 'make']
+        packages: ['g++', 'gcc-8.1.0-5ubuntu1~14.04 ', 'make']
         env:
             - CXX_COMPILER=g++
             - C_COMPILER=gcc
