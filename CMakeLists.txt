@@ -11,4 +11,5 @@ set(CMAKE_CXX_FLAGS "-lncurses")
 
 add_executable(hoshiMenu main.cpp)
 target_link_libraries(hoshiMenu ${CURLPP_LDFLAGS})
+target_link_libraries(hoshiMenu ${NCURSES_CXXFLAGS})
 
