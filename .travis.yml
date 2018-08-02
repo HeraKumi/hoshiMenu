@@ -1,20 +1,17 @@
 language: cpp
 sudo: required
-dist: trusty
+dist: bionic
 os: linux
 compiler: gcc
 addons:
     apt:
         sources: ['ubuntu-toolchain-r-test']
-        packages: ['g++', 'gcc', 'make']
+        packages: ['g++', 'gcc-8.1', 'make']
         env:
             - CXX_COMPILER=g++
             - C_COMPILER=gcc
 
 before_install:
-    - sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-    - sudo apt-get update -q
-    - sudo apt-get install gcc-8.1 -y
     - pushd ~
     - wget -O curlpp-0.8.1.tar.gz https://github.com/jpbarrette/curlpp/archive/v0.8.1.tar.gz
     - tar -xf curlpp-0.8.1.tar.gz
