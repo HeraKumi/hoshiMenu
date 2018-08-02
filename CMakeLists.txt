@@ -8,7 +8,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 set(CMAKE_CXX_FLAGS "-lncurses")
-set(LDFLAGS "-lncurses")
 
 add_executable(hoshiMenu main.cpp)
 target_link_libraries(hoshiMenu ${CURLPP_LDFLAGS})

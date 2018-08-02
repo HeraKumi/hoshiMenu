@@ -6,7 +6,7 @@ compiler: gcc
 addons:
     apt:
         sources: ['ubuntu-toolchain-r-test']
-        packages: ['g++', 'gcc', 'cmake', 'make']
+        packages: ['g++', 'gcc', 'cmake', 'make', 'libncurses6-dev']
         env:
             - CXX_COMPILER=g++
             - C_COMPILER=gcc
@@ -31,5 +31,5 @@ before_install:
 script:
     - mkdir build
     - cd build
-    - cmake ..
+    - cmake .. 
     - make
