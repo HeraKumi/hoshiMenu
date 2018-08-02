@@ -6,7 +6,7 @@ compiler: gcc
 addons:
     apt:
         sources: ['ubuntu-toolchain-r-test']
-        packages: ['g++', 'gcc-8.1.0-5ubuntu1~14.04 ', 'make']
+        packages: ['g++', 'gcc', 'make']
         env:
             - CXX_COMPILER=g++
             - C_COMPILER=gcc
@@ -31,6 +31,11 @@ before_install:
     - cd CMake-3.11.4
     - ./bootstrap && make && sudo make install
     - popd
+
+before_script:
+    - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+    - sudo apt-get -qq update
+    - sudo apt-get -qq install g++-8.1
 
 script:
     - mkdir build
