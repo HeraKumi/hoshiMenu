@@ -1,6 +1,10 @@
 #include <ncurses.h>
 #include <string>
 #include <cstring>
+#include <curlpp/cURLpp.hpp>
+#include <curlpp/Options.hpp>
+// TODO - Create cmake link
+// TODO - Create dir to put images in
 
 using namespace std;
 
@@ -143,7 +147,10 @@ int main(int argc, char** argv){
     wrefresh(ouputWin);
 
     // curl - http stuff
-    // TODO - link curlpp
+    // TODO - create a dir for images
+    curlpp::Cleanup myCleanUp;
+
+
     
   }
   getch();
