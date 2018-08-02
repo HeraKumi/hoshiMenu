@@ -1,12 +1,12 @@
 language: cpp
 sudo: required
-dist: bionic
+dist: trusty
 os: linux
 compiler: gcc
 addons:
     apt:
-        sources: ['ubuntu-toolchain-r-test']
-        packages: ['g++', 'gcc-8.1', 'make']
+        sources: ['ubuntu-toolchain-r-test', 'jonathonf']
+        packages: ['g++', 'gcc-8', 'make']
         env:
             - CXX_COMPILER=g++
             - C_COMPILER=gcc
