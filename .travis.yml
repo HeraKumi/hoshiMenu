@@ -6,7 +6,7 @@ compiler: gcc
 addons:
     apt:
         sources: ['ubuntu-toolchain-r-test']
-        packages: ['g++', 'gcc', 'cmake', 'cmake-data', 'make', 'libncurses-dev']
+        packages: ['g++-8', 'gcc-8', 'make']
         env:
             - CXX_COMPILER=g++
             - C_COMPILER=gcc
@@ -26,6 +26,10 @@ before_install:
     - ./configure
     - make
     - sudo make install
+    - wget https://github.com/Kitware/CMake/archive/v3.11.4.tar.gz
+    - tar -xf v3.11.4.tar.gz
+    - cd CMake-3.11.4
+    - ./bootstrap && make && sudo make install
     - popd
 
 script:
