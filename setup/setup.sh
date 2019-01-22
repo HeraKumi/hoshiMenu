@@ -82,19 +82,6 @@ __setupHoshiAutomated(){
         fi
     fi
     
-    if [ -d "ncurses-6.1" ]; then
-        echo "moving"
-    else
-        if [ ! -d "ncurses-6.1" ]; then
-            wget -O ncurses-6.1.tar.gz https://invisible-mirror.net/archives/ncurses/ncurses-6.1.tar.gz
-            tar -xf ncurses-6.1.tar.gz
-            cd ncurses-6.1
-            ./configure
-            make
-            sudo make install
-            cd ..
-        fi
-    fi
     __buildHoshi
 }
 
