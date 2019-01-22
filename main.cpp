@@ -80,7 +80,7 @@ int main(int argc, char** argv){
 
   keypad(taskWin, true);
   string deepinOptions[5] = { "Remove bloatware", "Update system", "Setup C++ environment", "Setup C# environment", "Anime Wallpaper GET" };
-  string archLinuxOptions[3] = { "Setup C++ environment", "Update system", "Anime Wallpaper GET" };
+  string archLinuxOptions[3] = { "Setup C++ environment", "Update system", "Anime Wallpaper" };
   int deepinOption, archLinuxOption;
   int hHighlight = 0;
 
@@ -134,7 +134,7 @@ int main(int argc, char** argv){
     }
   }
 
-  if (archLinuxOptions[hHighlight] == "Anime Wallpaper GET") { // This works
+  if (archLinuxOptions[hHighlight] == "Anime Wallpaper") { // This works
     string mesg = "Enter download dir: ";
     char str[80];
     int row  = 1, col = 1;
